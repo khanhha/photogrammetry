@@ -1,0 +1,4 @@
+load('pnts_2d.mat');
+load('pnts_3d.mat');
+pnts_3
+H = homo_3d_2d(pnts_3d', pnts_2d')

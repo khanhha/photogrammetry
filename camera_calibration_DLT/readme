@@ -1,0 +1,6 @@
+cam_calibration.m: the main calibration code. it loads the 2d-3d point correspondences from pnts_2d.mat, pnts_3d.mat and estimate the projection matrix.
+pnts_2d.mat: the 2d points picked up on the image calib.jpg
+pnts_3d.mat: the 3d points are generated based on the folling rule. the order is consistent with the 2d points.
+point_pair_generation.m: the code to generate 3d points
+
+
