@@ -1,7 +1,0 @@
-1. fast check
-	run the file img_23_stich_main.m to see the final result
-	this file stiches the intermediate result of the image 1 and 2 with the image 3.
-2. step by step
-	- run the file img_12_stitch.m to stich the image 1 and 1, and then pick 4 landmark points on the stichted image.
-	- run the file img_23_stich_main.m to stich the intermediate reuslt with the iamge 3.
-

@@ -1,8 +1,10 @@
 clear;
 close all;
 
-X1_ = load('./pnts_3').pnts';
-X2_ = load('./pnts_4').pnts';
+X1_ = load('./pnts_3');
+X2_ = load('./pnts_4');
+X1_ = X1_.pnts';
+X2_ = X2_.pnts';
 X1_(3,:) = 1;
 X2_(3,:) = 1;
 
