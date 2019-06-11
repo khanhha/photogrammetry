@@ -29,10 +29,29 @@ This experiment is about camera calibration using  direct linear transformation 
 ![epipolar_line](./assets/epipolar_line.jpg)
 
 
+## Triangulation
+![triangulation_intro](./assets/triangulation_intro.png)
+In this experiment, the 3D point cloud of a subject is reconstructed from a set of tie points in the two stereo images. The algorithm includes the two main statges
+- Projective reconstruction
+    - First the fundamental matrix between the two stereo images are estimated using feature points.
+    - From the fundamental matrix, we create a pair of perspective projection matrices for two images. There is an unlimited number of projection matrices that could be created from the fundamental matrix, but we just pick one.
+    - we create a linear equation that relate 3D points to corresponding image points through the projection matrix. Solving this equation gives us 3D points in the projective space, which is shown in the below figure
+    ![triangulation_projective](./assets/triangulation_projective.png)
 
+- Euclidean reconstruction
+After the previous step, our point cloud is still in the projective space, which looks distorted. To make it look as what we often see everyday, we need to estimate a 3D homography that will transforms the projective point cloud to the Euclidean space.
+  - Given at least 5.5 3D control points we create a linear equation that relate projective points to corresponding 3D control points. Solving this equation will give us the 3D homography.
+  - We then apply the homography to transform our projective point cloud to Euclidean space. The final point is shown in the below.
+  ![triangulation_euclidean](./assets/triangulation_euclidean.png)  
 
+## Dense Stereo Correspondence
+![dense_stereo](./assets/dense_stereo.png)
+In this experiment, the disparity map is calculated from a pair of rectified stereo image. Rectified means that two input images are transformed by a planar homography in a way that two camera plane are parallel to each other, which is often a normal stereo rig. The rectified images bring us two advantages
+  - First the correspondence analysis could be reduced to a 1D search problem. Given a point in the left image, its corresponding point in the second image could be found by searching along the same row. After the corresponding point is found, the disparity value is calculated as the shift between two points along the horizontal axis.
+  - Secondly, in the normal case, the depth value is inversely proportional to the disparity value, which means that we could directly calculate the depth map if we know the disparity map.
 
-
+Below is a visualize of the disparity map. We can can see that the closer a point to the camera, the lighter the corresponding pixel is. This show that the disparity is inversely proportional to the depth value
+![disparity_map](./assets/disparity_map.png)
 
 
 
