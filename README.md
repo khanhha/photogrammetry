@@ -33,7 +33,7 @@ This experiment is about camera calibration using  direct linear transformation 
 
 
 ## Triangulation
-  <img src=./assets/triangulation_intro.png height=300 align="center">
+  <img src=./assets/triangulation_intro.png height=200 align="center">
 
 In this experiment, the 3D point cloud of a subject is reconstructed from a set of tie points in the two stereo images. The algorithm includes the two main statges
 - Projective reconstruction
@@ -41,13 +41,13 @@ In this experiment, the 3D point cloud of a subject is reconstructed from a set 
     - From the fundamental matrix, we create a pair of perspective projection matrices for two images. There is an unlimited number of projection matrices that could be created from the fundamental matrix, but we just pick one.
 
     - we create a linear equation that relate 3D points to corresponding image points through the projection matrix. Solving this equation gives us 3D points in the projective space, which is shown in the below figure
-    <img src=./assets/triangulation_projective.png height=300 align="center">
+    <img src=./assets/triangulation_projective.png height=200 align="center">
 
 - Euclidean reconstruction
 After the previous step, our point cloud is still in the projective space, which looks distorted. To make it look as what we often see everyday, we need to estimate a 3D homography that will transforms the projective point cloud to the Euclidean space.
   - Given at least 5.5 3D control points we create a linear equation that relate projective points to corresponding 3D control points. Solving this equation will give us the 3D homography.
   - We then apply the homography to transform our projective point cloud to Euclidean space. The final point is shown in the below.
-  <img src=./assets/triangulation_euclidean.png height=300 align="center">  
+  <img src=./assets/triangulation_euclidean.png height=250 align="center">  
 
 ## Dense Stereo Correspondence
 <img src=./assets/dense_stereo.png height=200 align="center">
