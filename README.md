@@ -1,4 +1,4 @@
-#Photogrammetry
+# Photogrammetry
 This repository holds my my experiments about fundamental tasks in photogrammetry
 
 ## Basic Homography Math
@@ -13,6 +13,7 @@ In this experiment, I stitched 3 pictures of a subject into a single panorama pi
 
 ## Camera Calibration
 ![image](./assets/calibration.jpg)
+
 This experiment is about camera calibration using  direct linear transformation (DLT), which estimate the intrinsic and extrinsic camera parameters using correspondences between 3D-2D control points. The experiment include the following stages.
 - Correspondence analysis: the 2D control points on image are selected manually using a Matlab tool. The corresponding 3D control points are generated in code based on the pattern that we draw on the calibration object. At least 6 point correspondences are required for the DLT algorithm.
 - The projective transformation is then estimated from the correspondence points using SVD decomposition.
